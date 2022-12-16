@@ -7,16 +7,16 @@ import {Session} from "../models/session";
   providedIn: 'root'
 })
 export class SessionService {
-  protected http: HttpClient;
+
   url:string='http://localhost:8080/ordersandwich/api/session'
 
 
   constructor(
-    httpClient: HttpClient,
+    protected http: HttpClient,
   )
   {
 
-    this.http = httpClient;
+
   }
 
   getSessions(): Observable<Array<Session>>

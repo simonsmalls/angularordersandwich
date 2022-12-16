@@ -5,6 +5,7 @@ import {SessionService} from "../../service/session.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {filter} from "rxjs";
 import {Router} from "@angular/router";
+import {PassingService} from "../../service/passing.service";
 
 @Component({
   selector: 'app-home',
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit  {
 
   constructor(
     private sessionService: SessionService,
+    private passingService: PassingService,
     private fb:FormBuilder,
     private router: Router,
 
@@ -66,6 +68,7 @@ export class HomeComponent implements OnInit  {
       if(person.id==id){
 
         this.person=person;
+        this.passingService.personId=id;
         break
       }
     }
@@ -73,7 +76,7 @@ export class HomeComponent implements OnInit  {
   }
 
   order(){
-    this.router.navigate(['/items/add'])
+    this.router.navigate(['/order/order'])
   }
 
 }
