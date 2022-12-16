@@ -1,5 +1,15 @@
-<select name="session"  [formControl]="$any(entityForm.controls['session'])"  >
-  <option *ngFor="let session of sessions" [value]="session" >{{session.name}}</option>
+<select name="session"  [formControl]="$any(entityForm.controls['session'])"  (change)="setSession()" >
+  <option *ngFor="let session of sessions" [value]="session.id"  >{{session.name}}</option>
 
 </select>
 
+<p>
+<select *ngIf="session!=null" name="name"  [formControl]="$any(entityForm.controls['name'])" (change)="setPerson()"  >
+  <option *ngFor="let person of persons" [value]="person.id" >{{person.firstName}} {{person.lastName}}</option>
+
+</select>
+</p>
+
+
+<button *ngIf="session!=null && person!=null" (click)="order()"> order</button>
+<button *ngIf="session!=null && person!=null">edit order</button>
