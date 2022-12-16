@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 import {NavComponent} from "./components/nav/nav.component";
 import { HomeComponent } from './components/home/home.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { FinancialComponent } from './financial/financial.component';
 import {RouterModule} from "@angular/router";
@@ -24,8 +24,9 @@ import {RouterModule} from "@angular/router";
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: 'financial', component: FinancialComponent },
-    ])
+      {path: 'financial', component: FinancialComponent},
+    ]),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
