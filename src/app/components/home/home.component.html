@@ -1,0 +1,5 @@
+<select name="session"  [formControl]="$any(entityForm.controls['session'])"  >
+  <option *ngFor="let session of sessions" [value]="session" >{{session.name}}</option>
+
+</select>
+

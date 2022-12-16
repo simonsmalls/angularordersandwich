@@ -22,12 +22,12 @@ export class SessionService {
   getSessions(): Observable<Array<Session>>
   {
 
-    return this.http.get<Array<Session>>(this.url + 'user/basket');
+    return this.http.get<Array<Session>>(this.url );
   }
 
   getSessionsToday(): Observable<Array<Session>>
   {
 
-    return this.http.get<Array<Session>>(this.url + 'user/basket' , );
+    return this.http.get<Array<Session>>(this.url + '/today'  );
   }
 }
