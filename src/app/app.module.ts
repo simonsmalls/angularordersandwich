@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { FinancialComponent } from './financial/financial.component';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
     declarations: [
@@ -21,8 +22,10 @@ import { FinancialComponent } from './financial/financial.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
-
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: 'financial', component: FinancialComponent },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
