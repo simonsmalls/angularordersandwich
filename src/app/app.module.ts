@@ -26,7 +26,8 @@ import {RouterModule} from "@angular/router";
     RouterModule.forRoot([
       {path: 'financial', component: FinancialComponent},
     ]),
-    FormsModule
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
