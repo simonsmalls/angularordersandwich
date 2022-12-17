@@ -1,7 +1,7 @@
 <form (submit)="financialSummary()">
   <input type="month" [(ngModel)]="yearMonth">
   <select>
-    <option (change)="setSelectedShop(shop.id)" *ngFor="let shop of shops | async">{{ shop.name }}</option>
+    <option (change)="setSelectedShop(shop.id) " *ngFor="let shop of shops | async">{{ shop.name }}</option>
   </select>
   <button type="submit">submit</button>
 </form>
