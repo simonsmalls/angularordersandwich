@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit  {
       if(person.id==id){
 
         this.person=person;
-        this.passingService.personId=id;
+        this.passingService.person=person;
         break
       }
     }
