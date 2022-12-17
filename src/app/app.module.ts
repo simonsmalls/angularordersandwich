@@ -10,6 +10,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { FinancialComponent } from './financial/financial.component';
 import {RouterModule} from "@angular/router";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MaterialModule} from "./shared/material/material.module";
 
 @NgModule({
     declarations: [
@@ -27,6 +29,8 @@ import {RouterModule} from "@angular/router";
       {path: 'financial', component: FinancialComponent},
     ]),
     FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
 
   ],
   providers: [],

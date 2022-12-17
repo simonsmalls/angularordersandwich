@@ -1,14 +1,18 @@
-<select name="session"  [formControl]="$any(entityForm.controls['session'])"  (change)="setSession()" >
-  <option *ngFor="let session of sessions" [value]="session.id"  >{{session.name}}</option>
+<div>
+<mat-select   [formControl]="$any(entityForm.controls['session'])"  (selectionChange)="setSession()" >
+  <mat-option *ngFor="let session of sessions" [value]="session.id"  >{{session.name}}</mat-option>
 
-</select>
+</mat-select>
+</div>
+ <p></p>
+  <div>
 
-<p>
-<select *ngIf="session!=null" name="name"  [formControl]="$any(entityForm.controls['name'])" (change)="setPerson()"  >
-  <option *ngFor="let person of persons" [value]="person.id" >{{person.firstName}} {{person.lastName}}</option>
+<mat-select *ngIf="session!=null" name="name"  [formControl]="$any(entityForm.controls['name'])" (selectionChange)="setPerson()"  >
+  <mat-option *ngFor="let person of persons" [value]="person.id" >{{person.firstName}} {{person.lastName}}</mat-option>
 
-</select>
-</p>
+</mat-select>
+  </div>
+
 
 
 <button *ngIf="session!=null && person!=null" (click)="order()"> order</button>

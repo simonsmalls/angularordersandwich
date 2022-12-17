@@ -43,6 +43,7 @@ export class HomeComponent implements OnInit  {
     })
   }
   setSession(){
+    console.log("in session set")
 
     let id=this.entityForm.get('session').value;
 
