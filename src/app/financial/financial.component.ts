@@ -15,14 +15,13 @@ export class FinancialComponent implements OnInit{
   yearMonth: string;
   financeDto: FinanceDto;
 //  shopList: Observable<{ id: number; name: string }[]>;
-
+  shops: Observable<Shop[]>;
 //  shops: Shop[];
 //  selectedShop: Shop;
   selectedShop: number;
   summary: string;
   averagePrice: number;
   averageShopPrice;
-  shops: Observable<Shop[]>;
 
   setSelectedShop(){
   }

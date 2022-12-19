@@ -53,6 +53,21 @@ export class OrderTodayService {
     return this.http.get<number>(this.url + "price");
   }
 
+  send(id: number){
+    this.http.post(this.url + "send/shop/" + id, null);
+  }
+
+  checkallorderString(): Observable<string>
+  {
+    return this.http.get<string>(this.url + "check/all");
+  }
+
+  checkallorderPersons(): Observable<Person[]>
+  {
+    return this.http.get<Person[]>(this.url + "check/allpersons");
+  }
+
+
 
 
 }
