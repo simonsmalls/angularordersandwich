@@ -6,12 +6,14 @@ import { OrderComponent } from './order/order.component';
 import {AppTableModule} from "../shared/table/app-table.module";
 import { OrderSandwichComponent } from './order-sandwich/order-sandwich.component';
 import {FormsModule} from "@angular/forms";
+import { PersonOrderComponent } from './person-order/person-order.component';
 
 
 @NgModule({
   declarations: [
     OrderComponent,
-    OrderSandwichComponent
+    OrderSandwichComponent,
+    PersonOrderComponent
   ],
     imports: [
         CommonModule,

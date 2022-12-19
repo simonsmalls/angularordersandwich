@@ -32,11 +32,10 @@ export class HomeComponent implements OnInit  {
 
   ) { }
 
-  ngOnInit(): void {
+   ngOnInit(): void {
 
-    this.sessionService.getSessionsToday().subscribe((cat)=> {
+     this.sessionService.getSessionsToday().subscribe((cat)=> {
       this.sessions=cat;
-
     })
     this.entityForm=this.fb.group({
       session: [null,Validators.required],
@@ -86,6 +85,10 @@ export class HomeComponent implements OnInit  {
   noOrder() {
     this.orderTodayService.noOrder(this.person).subscribe();
     this.notOrder=true;
+  }
+  edit(){
+    this.router.navigate(['/order/'+this.person.id+'/order'])
+
   }
 
 }

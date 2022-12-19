@@ -15,4 +15,25 @@ export class SandwichOrder {
   note:string;
 
   person:Person;
+
+  toString() {
+    let str: string = this.sandwichType.name;
+
+    if (this.white) {
+      str += ' wit'
+    } else {
+      str += ' grijs '
+    }
+    if (this.rauwkost) {
+      str += " met groenten "
+    }
+    if (this.grilledVegs) {
+      str += " met gegrilde groenten "
+    }
+      str+= this.note;
+    return str;
+
+  }
+
+
 }

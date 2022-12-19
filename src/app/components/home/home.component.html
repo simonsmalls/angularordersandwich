@@ -16,7 +16,7 @@
 
 
 <button *ngIf="session!=null && person!=null" (click)="order()"> order</button>
-<button *ngIf="session!=null && person!=null">edit order</button>
+<button *ngIf="session!=null && person!=null" (click)="edit()">edit order</button>
 <button *ngIf="session!=null && person!=null" (click)="noOrder()">no order</button>
 
 <p *ngIf="notOrder"> {{person.firstName}} doesn't want anything today</p>
