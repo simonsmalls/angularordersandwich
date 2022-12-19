@@ -6,6 +6,7 @@ import {Ordertoday} from "../models/ordertoday";
 import {Person} from "../models/person";
 import {SandwichOrder} from "../models/sandwich-order";
 import {SandwichOrderModel} from "../models/sandwich-order-model";
+import {Str} from "../models/str";
 
 @Injectable({
   providedIn: 'root'
@@ -67,9 +68,9 @@ export class OrderTodayService {
     return this.http.get<Person[]>(this.url + "/check/allpersons");
   }
 
-  orderTodayToString(): Observable<string>
+  orderTodayToString(): Observable<Str>
   {
-    return this.http.get<string>(this.url + "/string");
+    return this.http.get<Str>(this.url + "/string");
   }
 
 
