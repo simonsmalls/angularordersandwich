@@ -5,4 +5,5 @@
   <p></p>
   <p> <textarea id="comment" cols="40" rows="5" placeholder="comment..." #comm></textarea> </p>
   <button (click)="order(comm.value)">order</button>
+  <p *ngIf="ordered" > you ordered!</p>
 </div>
