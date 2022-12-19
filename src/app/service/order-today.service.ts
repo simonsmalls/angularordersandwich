@@ -43,4 +43,8 @@ export class OrderTodayService {
     return this.http.post<SandwichOrder>(this.url + "check/person", person);
   }
 
+  remove(sandwichOrder: SandwichOrder){
+    return this.http.delete(this.url, sandwichOrder);
+  }
+
 }
