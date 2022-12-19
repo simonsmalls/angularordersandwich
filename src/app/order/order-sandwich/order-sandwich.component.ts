@@ -70,7 +70,7 @@ export class OrderSandwichComponent implements OnInit {
 
   order(comment){
     let order=new SandwichOrderModel();
-    order.i=this.id;
+    order.i=this.id-1;
     order.rauwkost=this.greens;
     order.grilledVegs=this.grilledGreens;
     order.white=this.white;

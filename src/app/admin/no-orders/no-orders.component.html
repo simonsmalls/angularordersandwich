@@ -1,1 +1,4 @@
-<p>no-orders works!</p>
+<div *ngIf="persons.length>0"></div>
+<p *ngFor="let person of persons">{{person.firstName}} {{person.lastName}} hasn't ordered yet</p>
+
+
