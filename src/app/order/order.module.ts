@@ -5,6 +5,7 @@ import { OrderRoutingModule } from './order-routing.module';
 import { OrderComponent } from './order/order.component';
 import {AppTableModule} from "../shared/table/app-table.module";
 import { OrderSandwichComponent } from './order-sandwich/order-sandwich.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { OrderSandwichComponent } from './order-sandwich/order-sandwich.componen
     imports: [
         CommonModule,
         OrderRoutingModule,
-        AppTableModule
+        AppTableModule,
+        FormsModule
     ]
 })
 export class OrderModule { }

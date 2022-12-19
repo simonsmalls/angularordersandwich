@@ -7,12 +7,12 @@ export class SandwichOrder {
 
   id:number;
 
-    sandwichType:SandwichType;
-    rauwkost:boolean;
-    grilledVegs:boolean;
+  sandwichType:SandwichType;
+  rauwkost:boolean;
+  grilledVegs:boolean;
 
-    white:boolean;
-    note:string;
+  white:boolean;
+  note:string;
 
   person:Person;
 }

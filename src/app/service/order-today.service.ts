@@ -5,6 +5,7 @@ import {Session} from "../models/session";
 import {Ordertoday} from "../models/ordertoday";
 import {Person} from "../models/person";
 import {SandwichOrder} from "../models/sandwich-order";
+import {SandwichOrderModel} from "../models/sandwich-order-model";
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,7 @@ export class OrderTodayService {
     return this.http.post(this.url+"/none", person );
   }
 
-  order(sandwichOrder: SandwichOrder){
+  order(sandwichOrder: SandwichOrderModel){
     return this.http.post(this.url, sandwichOrder);
   }
 
