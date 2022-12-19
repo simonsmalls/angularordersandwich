@@ -6,6 +6,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {filter} from "rxjs";
 import {Router} from "@angular/router";
 import {PassingService} from "../../service/passing.service";
+import {OrderTodayService} from "../../service/order-today.service";
 
 @Component({
   selector: 'app-home',
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit  {
 
   constructor(
     private sessionService: SessionService,
+    private orderTodayService: OrderTodayService,
     private passingService: PassingService,
     private fb:FormBuilder,
     private router: Router,
@@ -78,6 +80,10 @@ export class HomeComponent implements OnInit  {
 
   order(){
     this.router.navigate(['/order/order'])
+  }
+
+  noOrder() {
+    this.orderTodayService.noOrder(this.person);
   }
 
 }
