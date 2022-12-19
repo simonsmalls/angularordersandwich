@@ -1,4 +1,4 @@
 export class Str {
 
-  str:string;
+  string:string;
 }

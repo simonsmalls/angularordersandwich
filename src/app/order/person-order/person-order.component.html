@@ -1,0 +1,6 @@
+<div *ngIf="orders.length>0">
+  <p *ngFor="let order of orders">{{order.sandwichType.name}}
+  <button (click)="deleteOrder(order)">delete</button></p>
+</div>
+<div *ngIf="orders.length==0">{{person.firstName}} hasn't ordered yet</div>
+
