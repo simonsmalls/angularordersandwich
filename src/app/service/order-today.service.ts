@@ -24,10 +24,10 @@ export class OrderTodayService {
   getOrderToday(): Observable<Ordertoday>
   {
 
-    return this.http.get<Array<Session>>(this.url );
+    return this.http.get<Ordertoday>(this.url );
   }
 
   noOrder(person:Person){
-    return this.http.post<Array<Session>>(this.url+"/none", person );
+    return this.http.post(this.url+"/none", person );
   }
 }

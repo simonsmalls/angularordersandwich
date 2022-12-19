@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit  {
   session:Session;
   person:Person;
   entityForm: FormGroup;
+  notOrder:boolean;
 
   constructor(
     private sessionService: SessionService,
@@ -83,7 +84,8 @@ export class HomeComponent implements OnInit  {
   }
 
   noOrder() {
-    this.orderTodayService.noOrder(this.person);
+    this.orderTodayService.noOrder(this.person).subscribe();
+    this.notOrder=true;
   }
 
 }

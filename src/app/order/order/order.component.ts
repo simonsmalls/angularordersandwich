@@ -9,6 +9,7 @@ import {SandwichTypeService} from "../../service/sandwich-type.service";
 import {SandwichType} from "../../models/sandwichType";
 import {ButtonType, TableConfig} from "../../shared/table/models/table-config.model";
 import {Entity} from "../../models/entity.model";
+import {OrderTodayService} from "../../service/order-today.service";
 
 @Component({
   selector: 'app-order',
@@ -23,6 +24,7 @@ export class OrderComponent {
   tableConfig: TableConfig;
   ordering:boolean=false;
   id:number;
+  shopId:number;
 
 
 
@@ -31,6 +33,7 @@ export class OrderComponent {
   constructor(
     private sandwichTypeService: SandwichTypeService,
     private passingService: PassingService,
+    private orderTodayService:OrderTodayService,
     private fb:FormBuilder,
     private router: Router,
 
@@ -38,11 +41,13 @@ export class OrderComponent {
 
   ngOnInit(): void {
 
-    this.sandwichTypeService.getSandwichTypes(1).subscribe((cat)=> {
+
+    this.sandwichTypeService.getSandwichTypes(this.passingService.shopId).subscribe((cat)=> {
       this.sandwichTypes=cat;
 
 
     })
+
 
 
     this.person=this.passingService.person;
@@ -50,54 +55,6 @@ export class OrderComponent {
 
 
 
-/*
-    this.tableConfig = {
-      columns: [
-        {
-          columnName: 'name',
-          value: 'name'
-        },
-        {
-          columnName: 'price',
-          value: 'price'
-        },
-
-
-
-      ],
-      actions: [
-        {
-          actionName: 'add to basket',
-          actionCb: (product: Entity) => {
-
-
-
-          },
-          type: ButtonType.SUCCESS
-        },
-        {
-          actionName: 'order',
-          actionCb: (data: SandwichType) => {
-
-            this.router.navigate(['/order', data.id, 'edit']);
-          },
-          type: ButtonType.SUBMIT
-        },
-      ],
-      findDataCb: () => this.sandwichTypeService.getSandwichTypes(1),
-
-    }
-
-
-    /*
-    this.entityForm=this.fb.group({
-      session: [null,Validators.required],
-      name: [null,Validators.required],
-
-
-    })
-
-     */
   }
 
   switchOrder(){
