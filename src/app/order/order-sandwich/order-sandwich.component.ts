@@ -18,6 +18,7 @@ export class OrderSandwichComponent implements OnInit {
   grilledGreens:boolean=false;
   white:boolean=false;
   entityForm: FormGroup;
+  ordered:boolean=false;
   @Input() id:number;
   @Input() person:Person;
 
@@ -76,6 +77,9 @@ export class OrderSandwichComponent implements OnInit {
     order.note=comment;
     order.person=this.person;
 
+    this.orderTodayService.order(order).subscribe();
+
+    this.ordered=true;
 
   }
 
