@@ -25,27 +25,34 @@ export class OrderTodayService {
   }
 
   noOrder(person:Person){
-    return this.http.post(this.url+"/none", person );
+    this.http.post(this.url+"/none", person );
   }
 
   order(sandwichOrder: SandwichOrderModel){
-    return this.http.post(this.url, sandwichOrder);
+    this.http.post(this.url, sandwichOrder);
   }
 
   newOrderTomorrow(id: number){
-    return this.http.post(this.url + "new/tomorrow/" + id, null);
+    this.http.post(this.url + "new/tomorrow/" + id, null);
   }
 
   newOrderToday(id: number){
-    return this.http.post(this.url + "new/today/" + id, null);
+    this.http.post(this.url + "new/today/" + id, null);
   }
 
-  check(person: Person){
-    return this.http.post<SandwichOrder>(this.url + "check/person", person);
+  check(person: Person): Observable<SandwichOrder[]>{
+    return this.http.post<SandwichOrder[]>(this.url + "check/person", person);
   }
 
   remove(sandwichOrder: SandwichOrder){
-    return this.http.delete(this.url, sandwichOrder);
+    this.http.request('delete', this.url, {body: sandwichOrder});
   }
+
+  price(): Observable<number>
+  {
+    return this.http.get<number>(this.url + "price");
+  }
+
+
 
 }
