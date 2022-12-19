@@ -4,7 +4,7 @@ import {User} from "../../../models/user.model";
 import {ButtonType, ColumnConfig, RowAction, TableConfig} from "../models/table-config.model";
 import {propertiesToValue} from "../../utils/utility-function";
 import {MatPaginator} from "@angular/material/paginator";
-import {Logger} from "../../../services/logger.service";
+
 
 @Component({
   selector: 'app-table',
@@ -32,7 +32,7 @@ export class TableComponent implements OnInit {
     {
       this.displayColumns.push('actions');
     }
-    Logger.log('columns', this.displayColumns)
+
 
     this.dataSource.paginator = this.paginator;
   }

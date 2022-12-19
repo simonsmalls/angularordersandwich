@@ -7,6 +7,8 @@ import {PassingService} from "../../service/passing.service";
 import {Router} from "@angular/router";
 import {SandwichTypeService} from "../../service/sandwich-type.service";
 import {SandwichType} from "../../models/sandwichType";
+import {ButtonType, TableConfig} from "../../shared/table/models/table-config.model";
+import {Entity} from "../../models/entity.model";
 
 @Component({
   selector: 'app-order',
@@ -18,6 +20,9 @@ export class OrderComponent {
 
   sandwichTypes:Array<SandwichType>;
   person:Person;
+  tableConfig: TableConfig;
+  ordering:boolean=false;
+  id:number;
 
 
 
@@ -36,8 +41,54 @@ export class OrderComponent {
     this.sandwichTypeService.getSandwichTypes(1).subscribe((cat)=> {
       this.sandwichTypes=cat;
 
+
     })
+
+
     this.person=this.passingService.person;
+
+
+
+
+/*
+    this.tableConfig = {
+      columns: [
+        {
+          columnName: 'name',
+          value: 'name'
+        },
+        {
+          columnName: 'price',
+          value: 'price'
+        },
+
+
+
+      ],
+      actions: [
+        {
+          actionName: 'add to basket',
+          actionCb: (product: Entity) => {
+
+
+
+          },
+          type: ButtonType.SUCCESS
+        },
+        {
+          actionName: 'order',
+          actionCb: (data: SandwichType) => {
+
+            this.router.navigate(['/order', data.id, 'edit']);
+          },
+          type: ButtonType.SUBMIT
+        },
+      ],
+      findDataCb: () => this.sandwichTypeService.getSandwichTypes(1),
+
+    }
+
+
     /*
     this.entityForm=this.fb.group({
       session: [null,Validators.required],
@@ -47,6 +98,20 @@ export class OrderComponent {
     })
 
      */
+  }
+
+  switchOrder(){
+    if (this.ordering==true){
+      this.ordering=false
+      console.log("ordering false")
+    }else{
+      this.ordering=true
+      console.log("ordering true")
+
+    }
+  }
+  order(id:number){
+    this.id=id;
   }
 
 }

@@ -1,0 +1,47 @@
+
+button{
+  background: none;
+  color: inherit;
+  border:none;
+  font: inherit;
+  outline: inherit ;
+}
+
+
+
+.container{
+  width: 800px;
+  padding-left:40px;
+
+}
+
+.container2{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: solid;
+  border-width: thin;
+}
+p{
+  padding-left: 40px;
+}
+#action{
+  padding-left: 80px;
+}
+
+.first{
+  position: absolute;
+  padding-left:40px;
+  width: 350px;
+
+}
+.second{
+
+  width: 150px;
+  padding-left:400px;}
+.third{
+
+  padding-left:80px;
+  width: 150px;}
+
+
+

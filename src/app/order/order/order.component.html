@@ -1,1 +1,22 @@
 <p *ngIf="person!=null">order works! {{person.firstName}}</p>
+
+<div class="container">
+
+  <div class="container2">
+      <span class="first">name</span>
+      <span class="second">price</span>
+      <span id="action" class="first">action</span>
+  </div>
+  <div class="container2" *ngFor="let sandwich of sandwichTypes">
+
+      <span class="first"><button (click)="order(sandwich.id) ">{{sandwich.name}}</button></span>
+      <span class="second">{{sandwich.price}}</span>
+      <span class="third"> nothing yet</span>
+
+
+
+
+       <p *ngIf="sandwich.id==id"> whoop</p>
+  </div>
+
+</div>
