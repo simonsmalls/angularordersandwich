@@ -33,15 +33,15 @@ export class OrderTodayService {
   }
 
   newOrderTomorrow(id: number){
-    return this.http.post(this.url + "new/tomorrow/" + id, null);
+    return this.http.post(this.url + "/new/tomorrow/" + id, null);
   }
 
   newOrderToday(id: number){
-    return this.http.post(this.url + "new/today/" + id, null);
+    return this.http.post(this.url + "/new/today/" + id, null);
   }
 
   check(person: Person): Observable<SandwichOrder[]>{
-    return this.http.post<SandwichOrder[]>(this.url + "check/person", person);
+    return this.http.post<SandwichOrder[]>(this.url + "/check/person", person);
   }
 
   remove(sandwichOrder: SandwichOrder){
@@ -50,26 +50,26 @@ export class OrderTodayService {
 
   price(): Observable<number>
   {
-    return this.http.get<number>(this.url + "price");
+    return this.http.get<number>(this.url + "/price");
   }
 
   send(id: number){
-    return this.http.post(this.url + "send/shop/" + id, null);
+    return this.http.post(this.url + "/send/shop/" + id, null);
   }
 
   checkallorderString(): Observable<string>
   {
-    return this.http.get<string>(this.url + "check/all");
+    return this.http.get<string>(this.url + "/check/all");
   }
 
   checkallorderPersons(): Observable<Person[]>
   {
-    return this.http.get<Person[]>(this.url + "check/allpersons");
+    return this.http.get<Person[]>(this.url + "/check/allpersons");
   }
 
   orderTodayToString(): Observable<string>
   {
-    return this.http.get<string>(this.url + "string");
+    return this.http.get<string>(this.url + "/string");
   }
 
 
