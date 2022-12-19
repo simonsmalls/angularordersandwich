@@ -67,7 +67,10 @@ export class OrderTodayService {
     return this.http.get<Person[]>(this.url + "check/allpersons");
   }
 
-
+  orderTodayToString(): Observable<string>
+  {
+    return this.http.get<string>(this.url + "string");
+  }
 
 
 }
