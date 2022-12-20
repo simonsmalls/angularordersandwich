@@ -20,12 +20,11 @@ export class OrderTodayService {
     protected http: HttpClient,
   ) {}
 
-  getOrderToday(): Observable<Ordertoday>
-  {
+  getOrderToday(): Observable<Ordertoday> {
     return this.http.get<Ordertoday>(this.url );
   }
 
-  noOrder(person:Person){
+  noOrder(person: Person){
     return this.http.post(this.url+"/none", person );
   }
 
@@ -35,10 +34,12 @@ export class OrderTodayService {
 
   newOrderTomorrow(id: number){
     return this.http.post(this.url + "/new/tomorrow/" + id, null);
+    console.log("tomorrow"); //TODO
   }
 
   newOrderToday(id: number){
     return this.http.post(this.url + "/new/today/" + id, null);
+    console.log("today"); //TODO
   }
 
   check(person: Person): Observable<SandwichOrder[]>{
@@ -56,6 +57,7 @@ export class OrderTodayService {
 
   send(id: number){
     return this.http.post(this.url + "/send/shop/" + id, null);
+    console.log("sent"); //TODO
   }
 
   checkallorderString(): Observable<string>

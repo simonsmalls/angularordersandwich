@@ -15,7 +15,7 @@ export class ShopService {
   }
 
   getShops(): Observable<Shop[]> {
-    return this.httpClient.get<Shop[]>(this.url);;
+    return this.httpClient.get<Shop[]>(this.url);
   }
 
 }

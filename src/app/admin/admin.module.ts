@@ -8,6 +8,7 @@ import { NoOrdersComponent } from './no-orders/no-orders.component';
 import { NewOrderComponent } from './new-order/new-order.component';
 import {MatSelectModule} from "@angular/material/select";
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     CommonModule,
     AdminRoutingModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonToggleModule
   ]
 })
 export class AdminModule { }

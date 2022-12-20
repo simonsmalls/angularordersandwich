@@ -1,9 +1,22 @@
-<p>Next shop</p>
 <div>
-  <mat-select [formControl] = "$any(entityForm.controls['shop'])" (selectionChange)="setShop()">
-    <mat-option *ngFor="let shop of shops" [value]="shop.id">Shop {{shop.name}}</mat-option>
-  </mat-select>
+  <mat-form-field appearance="fill"  >
+    <mat-label>Shop - next order</mat-label>
+    <mat-select [formControl]="$any(entityForm.controls['shop'])" (selectionChange)="setShop()">
+      <mat-option *ngFor="let shop of shops" [value]="shop.id">{{shop.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
 </div>
+<p><br></p>
 <p>
-  <button (click)="send()">Save current order and open new order tomorrow</button>
+  <mat-button-toggle (click)="send()">Save current order & open new order tomorrow</mat-button-toggle>
+</p>
+<p>
+  <mat-button-toggle (click)="sendNewOrderToday()">Save current order & open new order today</mat-button-toggle>
+</p>
+<p><br></p>
+<p>
+  <mat-button-toggle (click)="newOrderTomorrow()">Remove current order from history & open new order tomorrow</mat-button-toggle>
+</p>
+<p>
+  <mat-button-toggle (click)="newOrderToday()">Remove current order from history & open new order today</mat-button-toggle>
 </p>

@@ -13,15 +13,29 @@ export class NewOrderComponent implements OnInit{
 
   shops: Shop[];
   nextShopId: number;
-
   entityForm: FormGroup;
 
   setShop(){
     this.nextShopId = this.entityForm.get('shop').value;
+    console.log(this.nextShopId);
   }
 
   send(){
-    this.orderTodayService.send(this.nextShopId);
+    console.log(this.nextShopId);
+    this.orderTodayService.send(this.nextShopId).subscribe();
+  }
+
+  sendNewOrderToday(){
+    this.send();
+    this.newOrderToday();
+  }
+
+  newOrderToday(){
+    this.orderTodayService.newOrderToday(this.nextShopId).subscribe();
+  }
+
+  newOrderTomorrow(){
+    this.orderTodayService.newOrderTomorrow(this.nextShopId).subscribe();
   }
 
   constructor(
@@ -32,9 +46,8 @@ export class NewOrderComponent implements OnInit{
   }
 
   ngOnInit(){
-    this.shopService.getShops().subscribe((c) => {this.shops = c;})
-
-    this.entityForm = this.formBuilder.group({shop: [null, Validators.required]})
+    this.shopService.getShops().subscribe((c) => {this.shops = c;});
+    this.entityForm = this.formBuilder.group({shop: [null, Validators.required]});
   }
 
 }
