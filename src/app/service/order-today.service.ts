@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Session} from "../models/session";
 import {Ordertoday} from "../models/ordertoday";
@@ -53,8 +53,10 @@ export class OrderTodayService {
     return this.http.get<number>(this.url + "/price");
   }
 
-  send(id: number){
-    return this.http.post(this.url + "/send/shop/" + id, null);
+  send(id: number, today: string){
+    let httpParams = new HttpParams();
+    httpParams.set('today', today);
+    return this.http.post(this.url + "/send/shop/" + id, null, {params: httpParams});
   }
 
   checkallorderString(): Observable<string>

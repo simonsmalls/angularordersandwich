@@ -22,12 +22,11 @@ export class NewOrderComponent implements OnInit{
 
   send(){
     console.log(this.nextShopId);
-    this.orderTodayService.send(this.nextShopId).subscribe();
+    this.orderTodayService.send(this.nextShopId, "false").subscribe();
   }
 
   sendNewOrderToday(){
-    this.send();
-    this.newOrderToday();
+    this.orderTodayService.send(this.nextShopId, "true").subscribe();
   }
 
   newOrderToday(){
