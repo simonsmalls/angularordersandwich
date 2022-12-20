@@ -75,19 +75,14 @@ export class SessionService {
 
         @PostMapping("name")
     public Session findByName(@RequestBody Name name ) throws  SessionNotFoundException {
-        return service.findSessionsByName(name.getName()).stream()
-                .sorted(Comparator.comparing(Session::getEndDate).reversed())
-                .findFirst().orElseThrow(SessionNotFoundException::new);
     }
 
     @PostMapping("add")
     public void addPersonToSession2(@RequestBody AddToSessionModel model ) throws SessionNotFoundException, PersonAlreadyInSessionException, NullInputException {
-         service.addPersonToSession(model.getSession(),model.getPerson());
     }
 
     //add a new person to the database (or find if exists), and subscribe to session.
     @PostMapping("{sessionid}/newperson")
     public void addPersonToSession(@PathVariable("sessionid") int sessionId, @RequestBody Person person) throws SessionNotFoundException, PersonAlreadyInSessionException, NullInputException, PersonNotFoundException {
-        service.addPersonToSession(service.findSession(sessionId), person);
     }
  */
