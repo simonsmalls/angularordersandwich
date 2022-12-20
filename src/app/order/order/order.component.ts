@@ -26,6 +26,7 @@ export class OrderComponent {
   ordering:boolean=false;
   id:number;
   shopId:number;
+  panelOpenState:boolean;
 
 
 
@@ -45,6 +46,7 @@ export class OrderComponent {
 
     this.sandwichTypeService.getSandwichTypes(this.passingService.shopId).subscribe((cat)=> {
       this.sandwichTypes=cat;
+      this.getCategories(cat);
 
 
     })
@@ -65,8 +67,15 @@ export class OrderComponent {
     }
   }
 
-  filterByCat(){
+  filterByCat(category):Array<SandwichType>{
+    let list=[]
+    for(let type of this.sandwichTypes){
+      if(type.category==category){
+        list.push(type)
+      }
+    }
 
+    return list;
   }
 
   switchOrder(){

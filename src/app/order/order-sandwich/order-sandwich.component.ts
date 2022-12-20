@@ -38,8 +38,7 @@ export class OrderSandwichComponent implements OnInit {
 
     this.greens=true;
     this.grilledGreens=false;
-    console.log(" greens "  +this.greens)
-    console.log("grilled greens "  +this.grilledGreens)
+
 
 
   }
@@ -49,11 +48,20 @@ export class OrderSandwichComponent implements OnInit {
     this.greens=false;
     this.grilledGreens=true;
 
-    console.log(" greens "  +this.greens)
-    console.log("grilled greens "  +this.grilledGreens)
+
 
 
   }
+  NoGreens(){
+
+    this.greens=false;
+    this.grilledGreens=false;
+
+
+
+
+  }
+
 
 
 
@@ -77,9 +85,11 @@ export class OrderSandwichComponent implements OnInit {
     order.note=comment;
     order.person=this.person;
 
-    this.orderTodayService.order(order).subscribe();
+    this.orderTodayService.order(order).subscribe((c)=>{
+      this.ordered=true;
+    });
 
-    this.ordered=true;
+
 
   }
 

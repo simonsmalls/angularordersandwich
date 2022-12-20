@@ -1,25 +1,24 @@
 <span id="name">{{person.firstName}} {{person.lastName}}</span>
+
 <div class="container">
+<div id="acc" *ngFor="let cat of categories">
+  <h2>{{cat}}</h2>
+  <mat-accordion *ngFor="let sandwich of filterByCat(cat)">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header >
+        <mat-panel-title>
+          {{sandwich.name}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{sandwich.description}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p><app-order-sandwich  [id]="id" [person]="person"  [id]="sandwich.id" [person]="person">
 
-  <div class="container2">
-      <span class="first">name</span>
-      <span class="second">price</span>
-      <span id="action" class="first">action</span>
-  </div>
-  <div class="container2" *ngFor="let sandwich of sandwichTypes">
+      </app-order-sandwich></p>
+    </mat-expansion-panel>
 
-      <span class="first"><button (click)="order(sandwich.id) ">{{sandwich.name}}</button></span>
-      <span class="second">{{sandwich.price}}</span>
-      <span class="third"> nothing yet</span>
-
-
-
-
-       <app-order-sandwich *ngIf="sandwich.id==id" [id]="id" [person]="person">
-
-       </app-order-sandwich>
-  </div>
+  </mat-accordion>
 
 </div>
-
-<div></div>
+</div>

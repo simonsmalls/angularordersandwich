@@ -1,6 +1,7 @@
 <div class="container">
   <input type="radio" name="greens" value="raw" (change)="getGreens()"> <label> groenten</label>
   <input type="radio" name="greens" value="grilled" (change)="getGrilledGreens()"> <label>gegrilde groenten</label>
+  <input type="radio" name="greens" value="none" (change)="NoGreens()"> <label>gegrilde groenten</label>
   <p><input type="checkbox" name="white" value="white" (change)="getWhite()"> <label> wit brood</label></p>
   <p></p>
   <p> <textarea id="comment" cols="40" rows="5" placeholder="comment..." #comm></textarea> </p>

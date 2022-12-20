@@ -7,6 +7,7 @@ import {AppTableModule} from "../shared/table/app-table.module";
 import { OrderSandwichComponent } from './order-sandwich/order-sandwich.component';
 import {FormsModule} from "@angular/forms";
 import { PersonOrderComponent } from './person-order/person-order.component';
+import {MaterialModule} from "../shared/material/material.module";
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PersonOrderComponent } from './person-order/person-order.component';
         CommonModule,
         OrderRoutingModule,
         AppTableModule,
-        FormsModule
+        FormsModule,
+        MaterialModule
     ]
 })
 export class OrderModule { }
