@@ -8,7 +8,6 @@ import { NoOrdersComponent } from './no-orders/no-orders.component';
 import { NewOrderComponent } from './new-order/new-order.component';
 import {MatSelectModule} from "@angular/material/select";
 import {ReactiveFormsModule} from "@angular/forms";
-import {MaterialModule} from "../shared/material/material.module";
 
 
 @NgModule({

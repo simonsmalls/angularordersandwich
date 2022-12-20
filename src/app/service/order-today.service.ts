@@ -20,12 +20,11 @@ export class OrderTodayService {
     protected http: HttpClient,
   ) {}
 
-  getOrderToday(): Observable<Ordertoday>
-  {
+  getOrderToday(): Observable<Ordertoday> {
     return this.http.get<Ordertoday>(this.url );
   }
 
-  noOrder(person:Person){
+  noOrder(person: Person){
     return this.http.post(this.url+"/none", person );
   }
 
