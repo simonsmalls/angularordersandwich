@@ -26,7 +26,7 @@ import {MaterialModule} from "./shared/material/material.module";
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path: 'financial', component: FinancialComponent},
+      { path: 'financial', component: FinancialComponent },
     ]),
     FormsModule,
     BrowserAnimationsModule,

@@ -1,0 +1,9 @@
+<p>Next shop</p>
+<div>
+  <mat-select [formControl] = "$any(entityForm.controls['shop'])" (selectionChange)="setShop()">
+    <mat-option *ngFor="let shop of shops" [value]="shop.id">Shop {{shop.name}}</mat-option>
+  </mat-select>
+</div>
+<p>
+  <button (click)="send()">Save current order and open new order tomorrow</button>
+</p>
