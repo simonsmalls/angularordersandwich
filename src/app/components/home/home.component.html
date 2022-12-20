@@ -1,19 +1,25 @@
-<div id="container">
-  <div id ="center">
-<div id="course">
-<mat-select    [formControl]="$any(entityForm.controls['session'])"  (selectionChange)="setSession()" placeholder="courses" >
-  <mat-option *ngFor="let session of sessions" [value]="session.id"  >{{session.name}}</mat-option>
+<div id="container"><div id ="center">
+  <div id="course">
+    <mat-form-field appearance="fill"  >
+        <mat-label> courses</mat-label>
+        <mat-select    [formControl]="$any(entityForm.controls['session'])"  (selectionChange)="setSession()"  >
+            <mat-option *ngFor="let session of sessions" [value]="session.id"  >{{session.name}}</mat-option>
 
-</mat-select>
-</div>
- <p></p>
-  <div>
-
-<mat-select  *ngIf="session!=null" name="name"  [formControl]="$any(entityForm.controls['name'])" (selectionChange)="setPerson()" placeholder="students" >
-  <mat-option *ngFor="let person of persons" [value]="person.id" >{{person.firstName}} {{person.lastName}}</mat-option>
-
-</mat-select>
+        </mat-select>
+    </mat-form-field>
   </div>
+
+  <div id="students" *ngIf="session!=null">
+    <mat-form-field appearance="fill"  >
+      <mat-label> students</mat-label>
+      <mat-select  [formControl]="$any(entityForm.controls['name'])"  (selectionChange)="setPerson()"  >
+        <mat-option *ngFor="let person of persons" [value]="person.id"  >{{person.firstName}} {{person.lastName}}</mat-option>
+
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+
 
 <p></p>
 <p></p>

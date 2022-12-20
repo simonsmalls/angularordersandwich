@@ -1,7 +1,6 @@
-mat-select{
+mat-form-field{
   width: 400px;
-  border-style: solid;
-  border-width: thin;
+
 }
 
 mat-button-toggle{
