@@ -82,9 +82,13 @@ export class HomeComponent implements OnInit  {
     this.router.navigate(['/order/order'])
   }
 
-  noOrder() {
-    this.orderTodayService.noOrder(this.person).subscribe();
-    this.notOrder=true;
+   noOrder() {
+
+    this.orderTodayService.noOrder(this.person).subscribe((c)=>{
+      this.notOrder=true;}
+    );
+
+
   }
   edit(){
     this.router.navigate(['/order/'+this.person.id+'/order'])

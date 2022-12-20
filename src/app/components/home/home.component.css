@@ -3,3 +3,17 @@ mat-select{
   border-style: solid;
   border-width: thin;
 }
+
+mat-button-toggle{
+  width: 133px;
+}
+#course{
+  padding-top: 20%;
+}
+
+#container{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
