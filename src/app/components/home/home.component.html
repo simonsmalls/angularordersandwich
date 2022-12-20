@@ -1,22 +1,33 @@
-<div>
-<mat-select   [formControl]="$any(entityForm.controls['session'])"  (selectionChange)="setSession()" >
-  <mat-option *ngFor="let session of sessions" [value]="session.id"  >{{session.name}}</mat-option>
+<div id="container"><div id ="center">
+  <div id="course">
+    <mat-form-field appearance="fill"  >
+        <mat-label> courses</mat-label>
+        <mat-select    [formControl]="$any(entityForm.controls['session'])"  (selectionChange)="setSession()"  >
+            <mat-option *ngFor="let session of sessions" [value]="session.id"  >{{session.name}}</mat-option>
 
-</mat-select>
-</div>
- <p></p>
-  <div>
+        </mat-select>
+    </mat-form-field>
+  </div>
 
-<mat-select *ngIf="session!=null" name="name"  [formControl]="$any(entityForm.controls['name'])" (selectionChange)="setPerson()"  >
-  <mat-option *ngFor="let person of persons" [value]="person.id" >{{person.firstName}} {{person.lastName}}</mat-option>
+  <div id="students" *ngIf="session!=null">
+    <mat-form-field appearance="fill"  >
+      <mat-label> students</mat-label>
+      <mat-select  [formControl]="$any(entityForm.controls['name'])"  (selectionChange)="setPerson()"  >
+        <mat-option *ngFor="let person of persons" [value]="person.id"  >{{person.firstName}} {{person.lastName}}</mat-option>
 
-</mat-select>
+      </mat-select>
+    </mat-form-field>
   </div>
 
 
 
-<button *ngIf="session!=null && person!=null" (click)="order()"> order</button>
-<button *ngIf="session!=null && person!=null" (click)="edit()">edit order</button>
-<button *ngIf="session!=null && person!=null" (click)="noOrder()">no order</button>
+<p></p>
+<p></p>
+
+<mat-button-toggle *ngIf="session!=null && person!=null" (click)="order()"> order</mat-button-toggle>
+<mat-button-toggle *ngIf="session!=null && person!=null" (click)="edit()">edit order</mat-button-toggle>
+<mat-button-toggle *ngIf="session!=null && person!=null" (click)="noOrder()">no order</mat-button-toggle>
 
 <p *ngIf="notOrder"> {{person.firstName}} doesn't want anything today</p>
+</div>
+</div>

@@ -20,6 +20,7 @@ export class OrderComponent {
 
 
   sandwichTypes:Array<SandwichType>;
+  categories:Array<string>=[];
   person:Person;
   tableConfig: TableConfig;
   ordering:boolean=false;
@@ -54,6 +55,17 @@ export class OrderComponent {
 
 
 
+
+  }
+  getCategories( sandwichTypes:Array<SandwichType>){
+    for(let type of sandwichTypes) {
+      if (!this.categories.includes(type.category)){
+        this.categories.push(type.category)
+      }
+    }
+  }
+
+  filterByCat(){
 
   }
 
