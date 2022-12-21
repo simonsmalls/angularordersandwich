@@ -43,13 +43,16 @@ export class OrderComponent {
 
   ngOnInit(): void {
 
+    this.orderTodayService.getOrderToday().subscribe((c)=>{
+      this.sandwichTypeService.getSandwichTypes(c.shop.id).subscribe((cat)=> {
+        this.sandwichTypes=cat;
+        this.getCategories(cat);
 
-    this.sandwichTypeService.getSandwichTypes(this.passingService.shopId).subscribe((cat)=> {
-      this.sandwichTypes=cat;
-      this.getCategories(cat);
 
+      })
 
     })
+
 
 
 
