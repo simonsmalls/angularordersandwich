@@ -54,9 +54,13 @@ export class OrderTodayService {
   }
 
   send(id: number, today: string){
+    console.log(today);
+    console.log(id);
     let httpParams = new HttpParams();
     httpParams.set('today', today);
-    return this.http.post(this.url + "/send/shop/" + id, null, {params: httpParams});
+    console.log(httpParams);
+ //TODO   return this.http.post(this.url + "/send/shop/" + id, null, {params: httpParams});
+    return this.http.post(this.url + "/send/shop/" + id + "?today=" + today, null);
   }
 
   checkallorderString(): Observable<string>
